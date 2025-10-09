@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Pengaduan</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Edit Pengaduan{% else %}Tambah Pengaduan Baru{% endif %}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Simpan</button>
+    </form>
+
+    <p><a href="{% url 'warga-detail' warga_id %}">Kembali ke detail warga</a></p>
+</body>
+</html>
