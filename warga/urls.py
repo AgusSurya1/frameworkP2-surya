@@ -3,7 +3,8 @@ from .views import (
     WargaListView,
     WargaDetailView,
     PengaduanCreateView,
-
+    PengaduanUpdateView,
+    PengaduanDeleteView,
 )
 
 urlpatterns = [
@@ -12,4 +13,6 @@ urlpatterns = [
 
     # URL pengaduan
     path('pengaduan/tambah/<int:warga_id>/', PengaduanCreateView.as_view(), name='pengaduan-tambah'),
+    path('pengaduan/<int:pk>/edit/', PengaduanUpdateView.as_view(), name='pengaduan-edit'),
+    path('pengaduan/<int:pk>/hapus/', PengaduanDeleteView.as_view(), name='pengaduan-hapus'),
 ]
